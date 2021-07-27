@@ -1,0 +1,31 @@
+﻿.img-button-group {
+    border-radius: 5px;
+    border: 2px solid #dbf3f3;
+}
+
+.img-button-price {
+    border-radius: 5px 0 0 0;
+    background-color: #073dd0;
+    color: white;
+    margin-bottom: 0;
+}
+
+.text-right {
+    margin-bottom: 0;
+    margin-right: -5px;
+}
+
+.min-and-max {
+    margin: 0 !important;
+}
+
+
+#range {
+    background-color: azure;
+    border: 1px solid blue;
+    border-radius: 1px;
+}
+
+.pt-2 {
+    font-size: 120%;
+}

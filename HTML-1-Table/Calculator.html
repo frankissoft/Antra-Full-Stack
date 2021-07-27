@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Calculator</title>
+    <style>
+        td {
+            width: 100px;
+            height: 100px;
+        }
+
+        tr {
+            height: 100px;
+        }
+
+        .btn {
+            width: 100%;
+            height: 100%;
+            font-family: Verdana;
+            font-size: 30px;
+        }
+
+        .display {
+            background-color: white;
+            text-align: right;
+            font-family: Verdana;
+            font-size: 24px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <table class="calculator-table" border="1" align="center" cellpadding="0" cellspacing="2">
+            <thead>
+                <tr>
+                    <th class="display" colspan="4">0</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><button class="btn" number>1</button></td>
+                    <td><button class="btn" number>2</button></td>
+                    <td><button class="btn" number>3</button></td>
+                    <td><button class="btn" operator>+</button></td>
+                </tr>
+                <tr>
+                    <td><button class="btn" number>4</button></td>
+                    <td><button class="btn" number>5</button></td>
+                    <td><button class="btn" number>6</button></td>
+                    <td><button class="btn" operator>-</button></td>
+                </tr>
+                <tr>
+                    <td><button class="btn" number>7</button></td>
+                    <td><button class="btn" number>8</button></td>
+                    <td><button class="btn" number>9</button></td>
+                    <td><button class="btn" operator>*</button></td>
+                </tr>
+                <tr>
+                    <td><button class="btn" clear>C</button></td>
+                    <td><button class="btn" number>0</button></td>
+                    <td><button class="btn" equal>=</button></td>
+                    <td><button class="btn" operator>/</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        const numberButtons = document.querySelectorAll("[number]")
+        const operatorButtons = document.querySelectorAll("[operator]")
+        const equalButton = document.querySelectorAll("[equal]")
+        const clearButton = document.querySelectorAll("[clear]")
+        const display = document.querySelectorAll("[display]")
+
+        function add(a, b) { return a + b; }
+        function sub(a, b) { return a - b; }
+        function mul(a, b) { return a * b; }
+        function div(a, b) { return a / b; }
+
+        function calculate(operator, a, b) {
+            a = Number(a);
+            b = Number(b);
+            switch (operator) {
+                case '+':
+                    return add(a, b);
+                case '-':
+                    return sub(a, b);
+                case '*':
+                    return mul(a, b);
+                case '/':
+                    return div(a, b);
+                default:
+                    return null;
+            }
+        }
+    </script>
+</body>
+</html>

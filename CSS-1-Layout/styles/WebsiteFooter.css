@@ -1,0 +1,57 @@
+﻿.container {
+    max-width: 100%;
+}
+
+#office_address_list {
+    list-style-type: none;
+}
+
+a:link, a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+#real_footer .form-group {
+    margin-bottom: 0;
+    padding-bottom: 2px;
+}
+
+#real_footer {
+    background-color: black;
+}
+
+.btn-black {
+    color: white;
+    background-color: black;
+}
+
+#resources_label, #services_label {
+    font-size: 125%;
+}
+
+#resources {
+    padding-left: 25px;
+}
+
+hr {
+    margin: 5px -5px !important;
+    border-top-color: darkgray !important;
+}
+
+li {
+    opacity: 0.8;
+    font-size: 80%;
+}
+
+ul:before {
+    content: attr(aria-label);
+}
+
+#office_address_title {
+    opacity: 1;
+    font-weight: bold;
+}
+
+.footer-label {
+    margin-bottom: 0;
+}

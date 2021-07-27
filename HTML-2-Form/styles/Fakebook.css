@@ -1,0 +1,58 @@
+﻿.py-5 {
+    background-color: #3a5794 !important;
+    font-family: Verdana;
+}
+
+legend {
+    padding: 3px 6px;
+    font-size: 16px;
+    text-align: center;
+    width:auto;
+}
+
+fieldset {
+    border: 1px solid white;
+    font-family: Verdana;
+    border-radius: 5px;
+}
+
+h1, h3, h5 {
+    text-align: center;
+}
+
+h1 {
+    font-size: 500%;
+    font-weight: bold;
+}
+
+.btn {
+    color: #3a5794;
+    font-weight: bold;
+}
+
+#door_color option:hover {
+    color: none;
+}
+
+#door_color {
+    background-color: hotpink;
+}
+#door_pink {
+    background-color: hotpink;
+}
+#door_red {
+    background-color: red;
+}
+#door_brown {
+    background-color: brown;
+}
+#door_black {
+    background-color: black;
+}
+#door_white {
+    background-color: white;
+}
+#door_cyan {
+    background-color: cyan;
+}
+

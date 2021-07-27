@@ -1,0 +1,79 @@
+﻿body {
+    background-color: black;
+}
+
+.container {
+    max-width: 70%;
+}
+
+.header {
+    padding: 0px;
+}
+
+.header, .content, .footer {
+    background-color: white;
+}
+
+.header-img {
+    background-image: url("../forest-bench-sunshine.jpg");
+    background-repeat: round;
+    background-size: cover;
+    height: 400px;
+}
+
+#welcome, #products, #news, #messages {
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+#news {
+    background-color: lightgray;
+}
+
+.row {
+    margin: 5px 2px;
+    padding: 5px 5px;
+}
+
+.btn {
+    padding: 0px;
+    border-radius: 0px;
+    font-size: 24px;
+}
+
+.header-btn {
+    margin: 0px;
+    background-color: lightgray;
+}
+
+.col-lg-2 {
+    padding: 0px 2px;
+}
+
+.col-md-8 {
+    padding-right: 5px;
+}
+
+h2 {
+    color: yellowgreen;
+}
+
+a:link, a:visited {
+    color: yellowgreen;
+    text-decoration: none;
+}
+
+a[class="product-link"]:link, a[class="product-link"]:visited {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer {
+    background-color: yellowgreen;
+}
+
+a[class="xhtml-link"]:link, a[class="xhtml-link"]:visited, a[class="css-link"]:link, a[class="css-link"]:visited {
+    color: black;
+}

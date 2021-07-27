@@ -1,0 +1,14 @@
+﻿.container {
+    background-color: midnightblue;
+    max-width: 100%;
+}
+
+.btn, #user_btn, #about_btn, #course_btn {
+    border: none;
+    background-color: transparent;
+    color: white;
+}
+
+option {
+    background-color: midnightblue;
+}

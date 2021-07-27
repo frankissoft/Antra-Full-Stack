@@ -1,0 +1,25 @@
+﻿.btn, .btn-primary {
+    border-radius: 0em;
+    margin: 1px;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+    background-color: orange;
+    border-color: orange;
+}
+
+.header-img {
+    background-image: url("https://lh3.googleusercontent.com/_0OiZeWgElIETUMZW8B9wEZR-V0BLMyDBHfK6hdYQVGzsryLQAZ0GEL9_PDi5NlzmpK8bETuJcZ0CtUQKnErvs36Xw=w640-h400-e365-rj-sc0x00ffffff");
+    background-repeat: round;
+    background-size: cover;
+    height: 100px;
+}
+
+#apply_button {
+    background-color: orange;
+    color: white;
+}
+
+.container {
+    max-width: 90%;
+}
