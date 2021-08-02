@@ -1,0 +1,12 @@
+E:\Microsoft Visual Studio\Antra\C#\Demo\DemoTask3\bin\Debug\netcoreapp3.1\Exercise3.exe
+E:\Microsoft Visual Studio\Antra\C#\Demo\DemoTask3\bin\Debug\netcoreapp3.1\Exercise3.deps.json
+E:\Microsoft Visual Studio\Antra\C#\Demo\DemoTask3\bin\Debug\netcoreapp3.1\Exercise3.runtimeconfig.json
+E:\Microsoft Visual Studio\Antra\C#\Demo\DemoTask3\bin\Debug\netcoreapp3.1\Exercise3.runtimeconfig.dev.json
+E:\Microsoft Visual Studio\Antra\C#\Demo\DemoTask3\bin\Debug\netcoreapp3.1\Exercise3.dll
+E:\Microsoft Visual Studio\Antra\C#\Demo\DemoTask3\bin\Debug\netcoreapp3.1\Exercise3.pdb
+E:\Microsoft Visual Studio\Antra\C#\Demo\DemoTask3\obj\Debug\netcoreapp3.1\Exercise3.AssemblyInfoInputs.cache
+E:\Microsoft Visual Studio\Antra\C#\Demo\DemoTask3\obj\Debug\netcoreapp3.1\Exercise3.AssemblyInfo.cs
+E:\Microsoft Visual Studio\Antra\C#\Demo\DemoTask3\obj\Debug\netcoreapp3.1\Exercise3.csproj.CoreCompileInputs.cache
+E:\Microsoft Visual Studio\Antra\C#\Demo\DemoTask3\obj\Debug\netcoreapp3.1\Exercise3.dll
+E:\Microsoft Visual Studio\Antra\C#\Demo\DemoTask3\obj\Debug\netcoreapp3.1\Exercise3.pdb
+E:\Microsoft Visual Studio\Antra\C#\Demo\DemoTask3\obj\Debug\netcoreapp3.1\Exercise3.genruntimeconfig.cache

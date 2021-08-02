@@ -1,0 +1,12 @@
+E:\Microsoft Visual Studio\Antra\C#\Demo\DemoTask\bin\Debug\netcoreapp3.1\DemoTask.exe
+E:\Microsoft Visual Studio\Antra\C#\Demo\DemoTask\bin\Debug\netcoreapp3.1\DemoTask.deps.json
+E:\Microsoft Visual Studio\Antra\C#\Demo\DemoTask\bin\Debug\netcoreapp3.1\DemoTask.runtimeconfig.json
+E:\Microsoft Visual Studio\Antra\C#\Demo\DemoTask\bin\Debug\netcoreapp3.1\DemoTask.runtimeconfig.dev.json
+E:\Microsoft Visual Studio\Antra\C#\Demo\DemoTask\bin\Debug\netcoreapp3.1\DemoTask.dll
+E:\Microsoft Visual Studio\Antra\C#\Demo\DemoTask\bin\Debug\netcoreapp3.1\DemoTask.pdb
+E:\Microsoft Visual Studio\Antra\C#\Demo\DemoTask\obj\Debug\netcoreapp3.1\DemoTask.AssemblyInfoInputs.cache
+E:\Microsoft Visual Studio\Antra\C#\Demo\DemoTask\obj\Debug\netcoreapp3.1\DemoTask.AssemblyInfo.cs
+E:\Microsoft Visual Studio\Antra\C#\Demo\DemoTask\obj\Debug\netcoreapp3.1\DemoTask.csproj.CoreCompileInputs.cache
+E:\Microsoft Visual Studio\Antra\C#\Demo\DemoTask\obj\Debug\netcoreapp3.1\DemoTask.dll
+E:\Microsoft Visual Studio\Antra\C#\Demo\DemoTask\obj\Debug\netcoreapp3.1\DemoTask.pdb
+E:\Microsoft Visual Studio\Antra\C#\Demo\DemoTask\obj\Debug\netcoreapp3.1\DemoTask.genruntimeconfig.cache
