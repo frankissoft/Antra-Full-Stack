@@ -9,3 +9,4 @@ E:\Microsoft Visual Studio\Antra\ASP.NET\MovieShop\ApplicationCore1\obj\Debug\ne
 E:\Microsoft Visual Studio\Antra\ASP.NET\MovieShop\ApplicationCore1\obj\Debug\net5.0\ApplicationCore.dll
 E:\Microsoft Visual Studio\Antra\ASP.NET\MovieShop\ApplicationCore1\obj\Debug\net5.0\ref\ApplicationCore.dll
 E:\Microsoft Visual Studio\Antra\ASP.NET\MovieShop\ApplicationCore1\obj\Debug\net5.0\ApplicationCore.pdb
+E:\Microsoft Visual Studio\Antra\ASP.NET\MovieShop\ApplicationCore1\obj\Debug\net5.0\ApplicationCore.csproj.AssemblyReference.cache

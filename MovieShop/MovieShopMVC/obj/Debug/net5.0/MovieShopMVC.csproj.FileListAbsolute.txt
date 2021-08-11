@@ -42,3 +42,4 @@ E:\Microsoft Visual Studio\Antra\ASP.NET\MovieShop\MovieShopMVC\bin\Debug\net5.0
 E:\Microsoft Visual Studio\Antra\ASP.NET\MovieShop\MovieShopMVC\bin\Debug\net5.0\Infrastructure.dll
 E:\Microsoft Visual Studio\Antra\ASP.NET\MovieShop\MovieShopMVC\bin\Debug\net5.0\Infrastructure.pdb
 E:\Microsoft Visual Studio\Antra\ASP.NET\MovieShop\MovieShopMVC\bin\Debug\net5.0\ApplicationCore.pdb
+E:\Microsoft Visual Studio\Antra\ASP.NET\MovieShop\MovieShopMVC\obj\Debug\net5.0\Razor\Views\Movies\Details.cshtml.g.cs

@@ -1,4 +1,5 @@
-﻿using Infrastructure.Services;
+﻿using ApplicationCore.ServiceInterfaces;
+using Infrastructure.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using MovieShopMVC.Models;
@@ -15,11 +16,14 @@ namespace MovieShopMVC.Controllers
         // private readonly ILogger<HomeController> _logger;
 
         // public HomeController(ILogger<HomeController> logger)
-        private MovieService _movieService;
-        public HomeController()
+        private IMovieService _movieService;
+        // tightly dependent on 
+        public HomeController(IMovieService movieService)
         {
+            _movieService = movieService;
             // _logger = logger;
-            _movieService = new MovieService();
+            //_movieService = new MovieService();
+
         }
 
         public IActionResult Index()
