@@ -10,3 +10,15 @@ E:\Microsoft Visual Studio\Antra\ASP.NET\MovieShop\ApplicationCore1\obj\Debug\ne
 E:\Microsoft Visual Studio\Antra\ASP.NET\MovieShop\ApplicationCore1\obj\Debug\net5.0\ref\ApplicationCore.dll
 E:\Microsoft Visual Studio\Antra\ASP.NET\MovieShop\ApplicationCore1\obj\Debug\net5.0\ApplicationCore.pdb
 E:\Microsoft Visual Studio\Antra\ASP.NET\MovieShop\ApplicationCore1\obj\Debug\net5.0\ApplicationCore.csproj.AssemblyReference.cache
+E:\Microsoft Visual Studio\Antra\ASP.NET\MovieShop - Copy\ApplicationCore1\bin\Debug\net5.0\ApplicationCore.deps.json
+E:\Microsoft Visual Studio\Antra\ASP.NET\MovieShop - Copy\ApplicationCore1\bin\Debug\net5.0\ApplicationCore.dll
+E:\Microsoft Visual Studio\Antra\ASP.NET\MovieShop - Copy\ApplicationCore1\bin\Debug\net5.0\ref\ApplicationCore.dll
+E:\Microsoft Visual Studio\Antra\ASP.NET\MovieShop - Copy\ApplicationCore1\bin\Debug\net5.0\ApplicationCore.pdb
+E:\Microsoft Visual Studio\Antra\ASP.NET\MovieShop - Copy\ApplicationCore1\obj\Debug\net5.0\ApplicationCore.csproj.AssemblyReference.cache
+E:\Microsoft Visual Studio\Antra\ASP.NET\MovieShop - Copy\ApplicationCore1\obj\Debug\net5.0\ApplicationCore.GeneratedMSBuildEditorConfig.editorconfig
+E:\Microsoft Visual Studio\Antra\ASP.NET\MovieShop - Copy\ApplicationCore1\obj\Debug\net5.0\ApplicationCore.AssemblyInfoInputs.cache
+E:\Microsoft Visual Studio\Antra\ASP.NET\MovieShop - Copy\ApplicationCore1\obj\Debug\net5.0\ApplicationCore.AssemblyInfo.cs
+E:\Microsoft Visual Studio\Antra\ASP.NET\MovieShop - Copy\ApplicationCore1\obj\Debug\net5.0\ApplicationCore.csproj.CoreCompileInputs.cache
+E:\Microsoft Visual Studio\Antra\ASP.NET\MovieShop - Copy\ApplicationCore1\obj\Debug\net5.0\ApplicationCore.dll
+E:\Microsoft Visual Studio\Antra\ASP.NET\MovieShop - Copy\ApplicationCore1\obj\Debug\net5.0\ref\ApplicationCore.dll
+E:\Microsoft Visual Studio\Antra\ASP.NET\MovieShop - Copy\ApplicationCore1\obj\Debug\net5.0\ApplicationCore.pdb

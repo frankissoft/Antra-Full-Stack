@@ -3,23 +3,25 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Infrastructure.Migrations
 {
-    public partial class AllTablesCreated : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropForeignKey(
-                name: "FK_MovieGenre_Movie_MOvieID",
-                table: "MovieGenre");
-
-            migrationBuilder.RenameColumn(
-                name: "MOvieID",
-                table: "MovieGenre",
-                newName: "MovieID");
-
-            migrationBuilder.RenameIndex(
-                name: "IX_MovieGenre_MOvieID",
-                table: "MovieGenre",
-                newName: "IX_MovieGenre_MovieID");
+            migrationBuilder.CreateTable(
+                name: "Cast",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: true),
+                    Gender = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    TmdbUrl = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ProfilePath = table.Column<string>(type: "nvarchar(2048)", maxLength: 2048, nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Cast", x => x.Id);
+                });
 
             migrationBuilder.CreateTable(
                 name: "Crew",
@@ -35,6 +37,48 @@ namespace Infrastructure.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Crew", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Genre",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(64)", maxLength: 64, nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Genre", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Movie",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Title = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
+                    Overview = table.Column<string>(type: "nvarchar(max)", maxLength: 4096, nullable: true),
+                    Tagline = table.Column<string>(type: "nvarchar(512)", maxLength: 512, nullable: true),
+                    Budget = table.Column<decimal>(type: "decimal(18,4)", nullable: true, defaultValue: 9.9m),
+                    Revenue = table.Column<decimal>(type: "decimal(18,4)", nullable: true, defaultValue: 9.9m),
+                    ImdbUrl = table.Column<string>(type: "nvarchar(2084)", maxLength: 2084, nullable: true),
+                    TmdbUrl = table.Column<string>(type: "nvarchar(2084)", maxLength: 2084, nullable: true),
+                    PosterUrl = table.Column<string>(type: "nvarchar(2084)", maxLength: 2084, nullable: true),
+                    BackdropUrl = table.Column<string>(type: "nvarchar(2084)", maxLength: 2084, nullable: true),
+                    OriginalLanguage = table.Column<string>(type: "nvarchar(64)", maxLength: 64, nullable: true),
+                    ReleaseDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    RunTime = table.Column<int>(type: "int", nullable: true),
+                    Price = table.Column<decimal>(type: "decimal(5,2)", nullable: true, defaultValue: 9.9m),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: true, defaultValueSql: "getdate()"),
+                    UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    UpdatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Movie", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -58,20 +102,45 @@ namespace Infrastructure.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     FirstName = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: true),
                     LastName = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: true),
-                    DateOfBirth = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValueSql: "getdate()"),
+                    DateOfBirth = table.Column<DateTime>(type: "datetime2", nullable: true, defaultValueSql: "getdate()"),
                     Email = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     HashedPassword = table.Column<string>(type: "nvarchar(1024)", maxLength: 1024, nullable: true),
                     Salt = table.Column<string>(type: "nvarchar(1024)", maxLength: 1024, nullable: true),
                     PhoneNumber = table.Column<string>(type: "nvarchar(16)", maxLength: 16, nullable: true),
-                    TwoFactorEnabled = table.Column<bool>(type: "bit", nullable: false),
-                    LockoutEndDate = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValueSql: "getdate()"),
-                    LastLoginDateTime = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValueSql: "getdate()"),
-                    IsLocked = table.Column<bool>(type: "bit", nullable: false),
-                    AccessFailedCount = table.Column<int>(type: "int", nullable: false)
+                    TwoFactorEnabled = table.Column<bool>(type: "bit", nullable: true),
+                    LockoutEndDate = table.Column<DateTime>(type: "datetime2", nullable: true, defaultValueSql: "getdate()"),
+                    LastLoginDateTime = table.Column<DateTime>(type: "datetime2", nullable: true, defaultValueSql: "getdate()"),
+                    IsLocked = table.Column<bool>(type: "bit", nullable: true),
+                    AccessFailedCount = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_User", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "MovieCast",
+                columns: table => new
+                {
+                    MovieId = table.Column<int>(type: "int", nullable: false),
+                    CastId = table.Column<int>(type: "int", nullable: false),
+                    Character = table.Column<string>(type: "nvarchar(450)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_MovieCast", x => new { x.CastId, x.MovieId, x.Character });
+                    table.ForeignKey(
+                        name: "FK_MovieCast_Cast_CastId",
+                        column: x => x.CastId,
+                        principalTable: "Cast",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_MovieCast_Movie_MovieId",
+                        column: x => x.MovieId,
+                        principalTable: "Movie",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -94,6 +163,51 @@ namespace Infrastructure.Migrations
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_MovieCrew_Movie_MovieId",
+                        column: x => x.MovieId,
+                        principalTable: "Movie",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "MovieGenre",
+                columns: table => new
+                {
+                    MovieId = table.Column<int>(type: "int", nullable: false),
+                    GenreId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_MovieGenre", x => new { x.MovieId, x.GenreId });
+                    table.ForeignKey(
+                        name: "FK_MovieGenre_Genre_GenreId",
+                        column: x => x.GenreId,
+                        principalTable: "Genre",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_MovieGenre_Movie_MovieId",
+                        column: x => x.MovieId,
+                        principalTable: "Movie",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Trailer",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    TrailerUrl = table.Column<string>(type: "nvarchar(2048)", maxLength: 2048, nullable: true),
+                    Name = table.Column<string>(type: "nvarchar(2048)", maxLength: 2048, nullable: true),
+                    MovieId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Trailer", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Trailer_Movie_MovieId",
                         column: x => x.MovieId,
                         principalTable: "Movie",
                         principalColumn: "Id",
@@ -216,9 +330,19 @@ namespace Infrastructure.Migrations
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_MovieCast_MovieId",
+                table: "MovieCast",
+                column: "MovieId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_MovieCrew_CrewId",
                 table: "MovieCrew",
                 column: "CrewId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_MovieGenre_GenreId",
+                table: "MovieGenre",
+                column: "GenreId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Purchase_MovieId",
@@ -236,30 +360,29 @@ namespace Infrastructure.Migrations
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Trailer_MovieId",
+                table: "Trailer",
+                column: "MovieId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_UserRole_UserId",
                 table: "UserRole",
                 column: "UserId");
-
-            migrationBuilder.AddForeignKey(
-                name: "FK_MovieGenre_Movie_MovieID",
-                table: "MovieGenre",
-                column: "MovieID",
-                principalTable: "Movie",
-                principalColumn: "Id",
-                onDelete: ReferentialAction.Cascade);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropForeignKey(
-                name: "FK_MovieGenre_Movie_MovieID",
-                table: "MovieGenre");
-
             migrationBuilder.DropTable(
                 name: "Favorite");
 
             migrationBuilder.DropTable(
+                name: "MovieCast");
+
+            migrationBuilder.DropTable(
                 name: "MovieCrew");
+
+            migrationBuilder.DropTable(
+                name: "MovieGenre");
 
             migrationBuilder.DropTable(
                 name: "Purchase");
@@ -268,34 +391,28 @@ namespace Infrastructure.Migrations
                 name: "Review");
 
             migrationBuilder.DropTable(
+                name: "Trailer");
+
+            migrationBuilder.DropTable(
                 name: "UserRole");
 
             migrationBuilder.DropTable(
+                name: "Cast");
+
+            migrationBuilder.DropTable(
                 name: "Crew");
+
+            migrationBuilder.DropTable(
+                name: "Genre");
+
+            migrationBuilder.DropTable(
+                name: "Movie");
 
             migrationBuilder.DropTable(
                 name: "Role");
 
             migrationBuilder.DropTable(
                 name: "User");
-
-            migrationBuilder.RenameColumn(
-                name: "MovieID",
-                table: "MovieGenre",
-                newName: "MOvieID");
-
-            migrationBuilder.RenameIndex(
-                name: "IX_MovieGenre_MovieID",
-                table: "MovieGenre",
-                newName: "IX_MovieGenre_MOvieID");
-
-            migrationBuilder.AddForeignKey(
-                name: "FK_MovieGenre_Movie_MOvieID",
-                table: "MovieGenre",
-                column: "MOvieID",
-                principalTable: "Movie",
-                principalColumn: "Id",
-                onDelete: ReferentialAction.Cascade);
         }
     }
 }
