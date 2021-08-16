@@ -152,3 +152,4 @@ E:\Microsoft Visual Studio\Antra\ASP.NET\MovieShop - Copy\MovieShopMVC\obj\Debug
 E:\Microsoft Visual Studio\Antra\ASP.NET\MovieShop - Copy\MovieShopMVC\obj\Debug\net5.0\ref\MovieShopMVC.dll
 E:\Microsoft Visual Studio\Antra\ASP.NET\MovieShop - Copy\MovieShopMVC\obj\Debug\net5.0\MovieShopMVC.pdb
 E:\Microsoft Visual Studio\Antra\ASP.NET\MovieShop - Copy\MovieShopMVC\obj\Debug\net5.0\MovieShopMVC.genruntimeconfig.cache
+E:\Microsoft Visual Studio\Antra\ASP.NET\MovieShop\MovieShopMVC\obj\Debug\net5.0\Razor\Views\Shared\_MovieCard.cshtml.g.cs

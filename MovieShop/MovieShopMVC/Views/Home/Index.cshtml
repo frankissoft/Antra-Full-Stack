@@ -8,7 +8,7 @@
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>*@
 
-<h1>
+@*<h1>
     @ViewBag.PageTitle
 </h1>
 
@@ -20,10 +20,21 @@
     <ul>
         @foreach (var movie in Model)
         {
-            <li>
-                @movie.Id <br />
-                @movie.Title
-            </li>
+            @await Html.PartialAsync("_MovieCard", movie)
         }
     </ul>
+</div>*@
+
+<div class="rounded">
+    <div class="container-fluid">
+        <div class="row">
+            @foreach (var movie in Model)
+            {
+                <div class="col-6 col-lg-3 col-sm-4 col-xl-2">
+                    @await Html.PartialAsync("_MovieCard", movie)
+                </div>
+                
+            }
+        </div>
+    </div>
 </div>

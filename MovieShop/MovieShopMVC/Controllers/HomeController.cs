@@ -26,18 +26,24 @@ namespace MovieShopMVC.Controllers
 
         }
 
-        public IActionResult Index()
+        //public IActionResult Index()
+        //{
+        //    // get popular movies and diplay on the view
+        //    var movies = _movieService.GetTopRevenueMovies();
+        //    // 2 ways to pass data from controller to view
+        //    // 1) Strongly typed models***
+        //    // 2) ViewBag
+        //    // 3) ViewData
+        //    // localhost:5000/movies/details/2
+        //    ViewBag.PageTitle = "Top Revenue Movies";
+        //    ViewData["TotalMovies"] = movies.Count();
+        //    return View(movies);
+        //}
+
+        public async Task<IActionResult> Index()
         {
-            // get popular movies and diplay on the view
-            var movies = _movieService.GetTopRevenueMovies();
-            // 2 ways to pass data from controller to view
-            // 1) Strongly typed models***
-            // 2) ViewBag
-            // 3) ViewData
-            // localhost:5000/movies/details/2
-            ViewBag.PageTitle = "Top Revenue Movies";
-            ViewData["TotalMovies"] = movies.Count();
-            return View(movies);
+            var movieCards = await _movieService.GetTopRevenueMovies();
+            return View(movieCards);
         }
 
         public IActionResult Privacy()
