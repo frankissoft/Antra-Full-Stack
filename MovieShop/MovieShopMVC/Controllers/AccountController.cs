@@ -1,4 +1,5 @@
 ﻿using ApplicationCore.Models;
+using ApplicationCore.ServiceInterfaces;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -9,19 +10,33 @@ namespace MovieShopMVC.Controllers
 {
     public class AccountController : Controller
     {
-        //public IActionResult Index()
-        //{
-        //    return View();
-        //}
+        private readonly IUserService _userService;
+
+        public AccountController(IUserService userService)
+        {
+            _userService = userService;
+        }
+
         [HttpGet]
         public IActionResult Login()
         {
             return View();
         }
         [HttpPost]
-        public IActionResult Login(LoginRequestModel model)
+        public async Task<IActionResult> Login(LoginRequestModel model)
         {
-            return View();
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+
+            var user = await _userService.Login(model);
+            if (user == null)
+            {
+                throw new Exception("Invalid Login");
+            }
+            // Cookies based authentication
+            return LocalRedirect("~/");
         }
         [HttpGet]
         public IActionResult Register()
@@ -29,9 +44,15 @@ namespace MovieShopMVC.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult Register(UserRegisterRequestModel model)
+        public async Task<IActionResult> Register(UserRegisterRequestModel model)
         {
-            return View();
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+            // call the service and repository to hash the password with salt and save to db
+            var registeredUser = await _userService.RegisterUser(model);
+            return RedirectToAction("Login");
         }
 
     }

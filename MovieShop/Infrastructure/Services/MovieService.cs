@@ -17,6 +17,75 @@ namespace Infrastructure.Services
         {
             _movieRepository = movieRepository;
         }
+
+        public async Task<MovieDetailsReponseModel> GetMovieDetails(int id)
+        {
+            var movie = await _movieRepository.GetByIdAsync(id);
+            var movieDetailsModel = new MovieDetailsReponseModel
+            {
+                Id = movie.Id,
+                Title = movie.Title,
+                ReleaseDate = movie.ReleaseDate,
+                RunTime = movie.RunTime,
+                Revenue = movie.Revenue,
+                Budget = movie.Budget,
+                // TODO
+            };
+
+            movieDetailsModel.Casts = new List<CastResponseModel>();
+            foreach (var cast in movie.MovieCasts)
+            {
+                movieDetailsModel.Casts.Add(new CastResponseModel 
+                { 
+                    Id = cast.CastId, 
+                    Name = cast.Cast.Name, 
+                    Character = cast.Character 
+                    //TODO
+                });
+            }
+            movieDetailsModel.Genres = new List<GenreReponseModel>();
+            foreach (var genre in movie.Genres)
+            {
+                movieDetailsModel.Genres.Add(new GenreReponseModel
+                {
+                    Id = genre.Id,
+                    Name = genre.Name
+                });
+                //TODO
+            }
+            return movieDetailsModel;
+        }
+
+        public Task<MovieDetailsReponseModel> GetMovieDetails()
+        {
+            throw new NotImplementedException();
+        }
+
+        //public async Task<MovieDetailsReponseModel> GetMovieDetails(int id)
+        //{
+        //    var movie = await _movieRepository.GetByIdAsync(id);
+        //    var movieDetailsModel = new MovieDetailsReponseModel
+        //    {
+        //        Id = movie.Id,
+        //        Title = movie.Title,
+        //        // TODO
+        //    };
+
+        //    movieDetailsModel.Casts = new List<CastResponseModel>();
+        //    foreach (var cast in movie.MovieCasts)
+        //    {
+        //        movieDetailsModel.Casts.Add(new CastResponseModel { Id = cast.CastId, Name = cast.Cast.Name, Character = cast.Character });
+        //    }
+        //    movieDetailsModel.Genres = new List<GenreReponseModel>();
+        //    foreach (var genre in movie.MovieGenres)
+        //    {
+        //        //TODO
+        //    }
+        //    {
+
+        //    }
+        //}
+
         public async Task<List<MovieCardResponseModel>> GetTopRevenueMovies()
         {
             // call repositories and retrieve data from database
