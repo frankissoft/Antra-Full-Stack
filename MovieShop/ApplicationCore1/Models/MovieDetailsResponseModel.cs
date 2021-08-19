@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ApplicationCore.Models
 {
-    public class MovieDetailsReponseModel
+    public class MovieDetailsResponseModel
     {
         public int Id { get; set; }
         public string Title { get; set; }
@@ -25,6 +25,6 @@ namespace ApplicationCore.Models
         public decimal? Rating { get; set; }
 
         public List<CastResponseModel> Casts { get; set; }
-        public List<GenreReponseModel> Genres { get; set; }
+        public List<GenreResponseModel> Genres { get; set; }
     }
 }

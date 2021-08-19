@@ -231,3 +231,5 @@ E:\Microsoft Visual Studio\Antra\ASP.NET\MovieShop\MovieShopMVC\obj\Debug\net5.0
 E:\Microsoft Visual Studio\Antra\ASP.NET\MovieShop\MovieShopMVC\bin\Debug\net5.0\Microsoft.AspNetCore.Cryptography.Internal.dll
 E:\Microsoft Visual Studio\Antra\ASP.NET\MovieShop\MovieShopMVC\bin\Debug\net5.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
 E:\Microsoft Visual Studio\Antra\ASP.NET\MovieShop\MovieShopMVC\obj\Debug\net5.0\Razor\Views\Account\Login.cshtml.g.cs
+E:\Microsoft Visual Studio\Antra\ASP.NET\MovieShop\MovieShopMVC\obj\Debug\net5.0\Razor\Views\Genres\Popular.cshtml.g.cs
+E:\Microsoft Visual Studio\Antra\ASP.NET\MovieShop\MovieShopMVC\obj\Debug\net5.0\Razor\Views\Cast\Details.cshtml.g.cs

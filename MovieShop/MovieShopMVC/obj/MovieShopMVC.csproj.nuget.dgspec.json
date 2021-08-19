@@ -102,6 +102,10 @@
               "target": "Package",
               "version": "[5.0.9, )"
             },
+            "Microsoft.AspNetCore.Http.Abstractions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[5.0.9, )"
@@ -150,6 +154,9 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
+              "E:\\Microsoft Visual Studio\\Antra\\ASP.NET\\MovieShop\\ApplicationCore1\\ApplicationCore.csproj": {
+                "projectPath": "E:\\Microsoft Visual Studio\\Antra\\ASP.NET\\MovieShop\\ApplicationCore1\\ApplicationCore.csproj"
+              },
               "E:\\Microsoft Visual Studio\\Antra\\ASP.NET\\MovieShop\\Infrastructure\\Infrastructure.csproj": {
                 "projectPath": "E:\\Microsoft Visual Studio\\Antra\\ASP.NET\\MovieShop\\Infrastructure\\Infrastructure.csproj"
               }

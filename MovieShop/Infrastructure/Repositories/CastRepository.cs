@@ -19,10 +19,10 @@ namespace Infrastructure.Repositories
 
         public override async Task<Cast> GetByIdAsync(int Id)
         {
-            var cast = await _dbContext.Casts.FirstOrDefaultAsync(c => c.Id == Id);
+            var cast = await _dbContext.Casts.Include(c => c.MovieCasts).ThenInclude(c => c.Movie).FirstOrDefaultAsync(c => c.Id == Id);
             if (cast == null)
             {
-                throw new Exception($"No cast Found for the id {Id}");
+                throw new Exception($"No Cast Found for the id {Id}");
             }
             return cast;
         }

@@ -18,17 +18,25 @@ namespace Infrastructure.Services
             _movieRepository = movieRepository;
         }
 
-        public async Task<MovieDetailsReponseModel> GetMovieDetails(int id)
+        public async Task<MovieDetailsResponseModel> GetMovieDetails(int id)
         {
             var movie = await _movieRepository.GetByIdAsync(id);
-            var movieDetailsModel = new MovieDetailsReponseModel
+            var movieDetailsModel = new MovieDetailsResponseModel
             {
                 Id = movie.Id,
                 Title = movie.Title,
+                Overview = movie.Overview,
+                Tagline = movie.Tagline,
+                ImdbUrl = movie.ImdbUrl,
+                TmdbUrl = movie.TmdbUrl,
+                PosterUrl = movie.PosterUrl,
+                BackdropUrl = movie.BackdropUrl,
+                OriginalLanguage = movie.OriginalLanguage,
                 ReleaseDate = movie.ReleaseDate,
                 RunTime = movie.RunTime,
                 Revenue = movie.Revenue,
                 Budget = movie.Budget,
+                Rating = movie.Rating,
                 // TODO
             };
 
@@ -39,24 +47,26 @@ namespace Infrastructure.Services
                 { 
                     Id = cast.CastId, 
                     Name = cast.Cast.Name, 
-                    Character = cast.Character 
+                    Character = cast.Character,
+                    Gender = cast.Cast.Gender, 
+                    ProfilePath = cast.Cast.ProfilePath 
                     //TODO
                 });
             }
-            movieDetailsModel.Genres = new List<GenreReponseModel>();
-            foreach (var genre in movie.Genres)
+            movieDetailsModel.Genres = new List<GenreResponseModel>();
+            foreach (var genre in movie.MovieGenres)
             {
-                movieDetailsModel.Genres.Add(new GenreReponseModel
+                movieDetailsModel.Genres.Add(new GenreResponseModel
                 {
-                    Id = genre.Id,
-                    Name = genre.Name
+                    Id = genre.Genre.Id,
+                    Name = genre.Genre.Name
                 });
                 //TODO
             }
             return movieDetailsModel;
         }
 
-        public Task<MovieDetailsReponseModel> GetMovieDetails()
+        public Task<MovieDetailsResponseModel> GetMovieDetails()
         {
             throw new NotImplementedException();
         }

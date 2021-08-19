@@ -30,9 +30,15 @@ namespace Infrastructure.Repositories
         {
             // movie -> genre -> cast -> rating
             // Include() ThenInclude()
-            var movie = await _dbContext.Movies.Include("MovieCasts.Cast").Include("MovieGenres.Genre").FirstOrDefaultAsync(m => m.Id == Id);
-            //var movie = await _dbContext.Movies.Include(m => m.MovieCasts).ThenInclude(m => m.Cast)
-            //    .Include(m => m.MovieGenres).ThenInclude(m => m.Genre).FirstOrDefaultAsync(m => m.Id == Id);
+            // var movie = await _dbContext.Movies.Include("MovieCasts.Cast").Include("MovieGenres.Genre").FirstOrDefaultAsync(m => m.Id == Id);
+            //var movie = await _dbContext.Movies
+            //                            .Include(m => m.MovieCasts).ThenInclude(mc => mc.Cast).Include(m => m.MovieGenres)
+            //                            .ThenInclude(mg => mg.Genre)
+            //                            .FirstOrDefaultAsync(m => m.Id == Id);
+            var movie = await _dbContext.Movies.Include(m => m.MovieGenres)
+                                        .ThenInclude(m => m.Genre).Include(m => m.MovieCasts).ThenInclude(mc => mc.Cast)
+                                        .FirstOrDefaultAsync(m => m.Id == Id);
+            //var movie = await _dbContext.Movies.Include(m => m.MovieCasts).ThenInclude(mc => mc.Cast).FirstOrDefaultAsync(m => m.Id == Id);
             //var movie = await _dbContext.Movies.Include(m => m.MovieCasts).ThenInclude(m => m.Cast).Include(m => m.Genres)
             //    .FirstOrDefaultAsync(m => m.Id == Id);
             //var movie = await _dbContext.Movies.FirstOrDefaultAsync(m => m.Id == Id);

@@ -1,0 +1,54 @@
+﻿@model ApplicationCore.Models.CastResponseModel
+
+
+<div class="container-fluid">
+    <div class="row mb-3">
+        <div class="col-3 offset-3">
+            <img class="img-fluid" src=@Model.ProfilePath alt="Cast profile photo">
+        </div>
+        <div class="col-6">
+            <div class="row">
+                <h3 class="align-middle">@Model.Name</h3>
+            </div>
+            <div class="row">
+                <table>
+                    <thead>
+                        <tr>
+                            <td>
+                                Top 10 
+                            </td>
+                            <td>
+                                Popular Movies
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var movie in Model.Movies.Take(10))
+                        {
+                            <tr>
+                                <td>
+                                    @movie.Title
+                                </td>
+                                <td>
+                                    @movie.Tagline
+                                </td>
+                            </tr> 
+                        }
+                    </tbody>
+                </table>
+               
+            </div>
+        </div>
+    </div>
+    <div class="row no-gutters">
+        @foreach (var movie in Model.Movies)
+        {
+            <div class="col-6 col-lg-3 col-sm-4 col-xl-2">
+                <a asp-controller="Movies" asp-action="Details" asp-route-id="@Model.Id">
+                    <img class="img-fluid border- border-dark" src=@movie.PosterUrl alt="Movie poster">
+                </a>
+            </div>
+
+        }
+    </div>
+</div>

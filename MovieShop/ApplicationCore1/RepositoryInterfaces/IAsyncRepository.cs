@@ -14,7 +14,7 @@ namespace ApplicationCore.RepositoryInterfaces
         Task<T> GetByIdAsync(int id);
         Task<IEnumerable<T>> ListAllAsync();
         Task<T> AddAsync(T entity);
-        Task<T> UpdateAsync(T enitity);
+        Task<T> UpdateAsync(T entity);
         Task<T> DeleteAsync(T entity);
         Task<IEnumerable<T>> ListAsync(Expression<Func<T, bool>> filter);
         Task<int> GetCountAsync(Expression<Func<T, bool>> filter = null);
